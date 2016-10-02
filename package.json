@@ -1,0 +1,36 @@
+{
+  "name": "webfileio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "ava": {
+    "files": [
+      "lib/*_test.js"
+    ]
+  },
+  "scripts": {
+    "start": "node scripts/start",
+    "test": "ava"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.6.6",
+    "co": "^4.6.0",
+    "jsonwebtoken": "^7.1.9",
+    "micro": "^6.0.2",
+    "minio": "^2.0.3",
+    "s3-policy": "^0.2.0",
+    "s3-post-policy": "^2.0.0",
+    "throng": "^4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "dotenv": "^2.0.0",
+    "nodemon": "^1.10.2",
+    "request": "^2.75.0",
+    "request-promise-native": "^1.0.3",
+    "standard": "^8.3.0"
+  }
+}
