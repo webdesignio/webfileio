@@ -18,7 +18,7 @@ export default class LibraryPageContainer extends Component {
       files: (function () {
         const a = []
         for (let i = 0; i < 100; i++) {
-          a.push({ id: shortid() })
+          a.push({ id: shortid(), url: '/img/demo-screenshot.jpg' })
         }
         return a
       })()

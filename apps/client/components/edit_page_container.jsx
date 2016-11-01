@@ -104,6 +104,7 @@ export default class EditPageContainer extends Component {
         {... this.props}
         {... this.state}
         {... this.handlers}
+        imageURL={this.props.currentFile.url}
       />
     )
   }

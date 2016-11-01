@@ -1,12 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import asPage from './as_page.jsx'
-
-const Container = styled.div`
-  overflow: auto;
-  height: calc(100vh - 180px);
-`
+import LibraryFileContainer from './library_file_container.jsx'
+import ScrollContainer from './scroll_container.jsx'
 
 function Footer () {
   return (
@@ -16,19 +12,22 @@ function Footer () {
   )
 }
 
-function LibraryPage ({ chunks }) {
+function LibraryPage ({ chunks, currentFile, onClickImage, onSelectLibraryFile }) {
   return (
-    <Container className='container'>
+    <ScrollContainer className='container'>
       {chunks.map(({ id, files }) =>
         <div key={id} className='row'>
           {files.map(file =>
-            <div key={file.id} className='col-md-3'>
-              <img src='/img/demo-screenshot.jpg' className='img-responsive' />
-            </div>
+            <LibraryFileContainer
+              key={file.id}
+              file={file}
+              isActive={currentFile && currentFile.id === file.id}
+              onSelect={onSelectLibraryFile}
+            />
           )}
         </div>
       )}
-    </Container>
+    </ScrollContainer>
   )
 }
 

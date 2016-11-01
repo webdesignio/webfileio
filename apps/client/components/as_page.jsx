@@ -12,6 +12,11 @@ const ModalFooter = styled.div`
   bottom: 0;
 `
 
+const renderEditTab = ({ page, onClickEditTab }) =>
+  <li className={page === 'edit' ? 'active' : ''}>
+    <a href='#' onClick={onClickEditTab}>Edit</a>
+  </li>
+
 const renderFooter = ({ Footer }, props) =>
   <ModalFooter className='modal-footer'>
     <Footer {... props} />
@@ -30,9 +35,9 @@ export default function asPage ({ Footer } = {}) {
               <li className={props.page === 'library' ? 'active' : ''}>
                 <a href='#' onClick={props.onClickLibraryTab}>Library</a>
               </li>
-              <li className={props.page === 'edit' ? 'active' : ''}>
-                <a href='#' onClick={props.onClickEditTab}>Edit</a>
-              </li>
+              {props.currentFile
+                ? renderEditTab(props)
+                : null}
             </ul>
             <Child {... props} />
           </div>
