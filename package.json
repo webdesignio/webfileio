@@ -8,8 +8,15 @@
       "lib/*_test.js"
     ]
   },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "envify"
+    ]
+  },
   "scripts": {
-    "start": "node scripts/start",
+    "build": "scripts/build",
+    "start": "scripts/start",
     "test": "ava"
   },
   "keywords": [],
@@ -18,9 +25,12 @@
   "dependencies": {
     "aws-sdk": "^2.6.6",
     "co": "^4.6.0",
+    "cropperjs": "^0.8.1",
+    "glamor": "^2.17.14",
     "jsonwebtoken": "^7.1.9",
     "micro": "^6.0.2",
     "minio": "^2.0.3",
+    "react-slider": "^0.7.0",
     "s3-policy": "^0.2.0",
     "s3-post-policy": "^2.0.0",
     "throng": "^4.0.0"
@@ -28,6 +38,7 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "dotenv": "^2.0.0",
+    "ecstatic": "^2.1.0",
     "nodemon": "^1.10.2",
     "request": "^2.75.0",
     "request-promise-native": "^1.0.3",

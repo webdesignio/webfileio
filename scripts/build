@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const { spawnSync } = require('child_process')
+
+spawnSync('browserify', [
+  '-o', 'apps/client/dist/client.js',
+  'apps/client/main.js'
+], { stdio: 'inherit' })
