@@ -1,10 +1,10 @@
 import React from 'react'
 
-import LibraryPage from './library_page.jsx'
+import LibraryPageContainer from './library_page_container.jsx'
 import EditPageContainer from './edit_page_container.jsx'
 
 const pages = {
-  library: LibraryPage,
+  library: LibraryPageContainer,
   edit: EditPageContainer
 }
 

@@ -31,8 +31,10 @@
     "micro": "^6.0.2",
     "minio": "^2.0.3",
     "react-slider": "^0.7.0",
+    "reselect": "^2.5.4",
     "s3-policy": "^0.2.0",
     "s3-post-policy": "^2.0.0",
+    "shortid": "^2.2.6",
     "throng": "^4.0.0"
   },
   "devDependencies": {

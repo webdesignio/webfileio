@@ -10,7 +10,7 @@ export default class AppContainer extends Component {
       onClickEditTab: this.onClickTab.bind(this, 'edit')
     }
     this.state = {
-      page: 'edit'
+      page: 'library'
     }
   }
 

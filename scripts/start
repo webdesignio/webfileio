@@ -2,9 +2,7 @@
 
 'use strict'
 
-const http = require('http')
 const { spawn } = require('child_process')
-const serve = require('serve-static')
 
 if (process.env.NODE_ENV === 'production') {
   require('../server')
@@ -14,24 +12,10 @@ if (process.env.NODE_ENV === 'production') {
     '-o', 'apps/client/dist/bundle.js',
     'apps/client/main.js'
   ], { stdio: 'inherit' })
-  const staticServer = serve('apps/client/dist')
-  http.createServer((req, res) => {
-    staticServer(req, res, next)
-
-    function next (err) {
-      if (err) {
-        console.log(err.stack)
-        res.statusCode = 500
-        res.end('Internal server error')
-        return
-      }
-      res.statusCode = 404
-      res.end('File not found :-(')
-    }
-  })
-  .listen(8080, () => {
-    console.log('static server listening on port 8080')
-  })
+  spawn('ecstatic', [
+    'apps/client/dist',
+    '--port', '8080'
+  ], { stdio: 'inherit' })
   spawn('nodemon', [
     '-w', 'server.js',
     '-w', 'index.js',
